@@ -16,21 +16,8 @@ npm run seed                  # puts the starter projects + certifications in Mo
 npm run dev                   # API on :5000, site on http://localhost:5173
 ```
 
-## 2. Make it yours (checklist)
 
-| What | Where |
-| --- | --- |
-| Your photo | Save as `client/public/tushar.jpg` (a portrait on a dark or transparent background looks best; edges fade into the hero automatically). Without it, a "TK" monogram is shown. |
-| Resume | Save as `client/public/resume.pdf` (the Resume button downloads it) |
-| Email, GitHub, LinkedIn, LeetCode | `client/src/data/siteData.js` |
-| Intro, about text, stats, skills, education | `client/src/data/siteData.js` |
-| Project screenshots | Save in `client/public/projects/` (the two included images are placeholders) |
-| Project titles, links, tech chips | `server/seed.js`, then run `npm run seed` again |
-| Colours | CSS variables at the top of `client/src/index.css` |
-
-`npm run seed` replaces all projects and certifications, so run it only when you want to reset them.
-
-## 3. Project structure
+## 2. Project structure
 
 ```
 server/
@@ -51,7 +38,7 @@ client/
     index.css
 ```
 
-## 4. API
+## 3. API
 
 | Method | Route | Access | Purpose |
 | --- | --- | --- | --- |
@@ -74,7 +61,7 @@ curl -X POST http://localhost:5000/api/projects \
 curl http://localhost:5000/api/contact -H "x-admin-key: YOUR_KEY"
 ```
 
-## 5. Deploy
+## 4. Deploy
 
 **Option A - one service (simplest, e.g. Render / Railway):**
 1. Push to GitHub. Create a MongoDB Atlas cluster and copy its connection string.
