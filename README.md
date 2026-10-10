@@ -1,4 +1,4 @@
-old one update this # Tushar Kumar - MERN Portfolio
+ # Tushar Kumar - MERN Portfolio
 
 Portfolio built with **MongoDB, Express, React (Vite) and Node.js**.
 Projects and certifications are stored in MongoDB and served by the Express API. The contact form saves messages to MongoDB.
