@@ -1,0 +1,28 @@
+# Runs the portfolio + MongoDB together:
+#   ADMIN_KEY=some-long-random-string docker compose up --build
+#   docker compose exec app npm run seed     # first run only: loads starter projects
+# Then open http://localhost:5000
+
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      NODE_ENV: production
+      PORT: 5000
+      MONGO_URI: mongodb://mongo:27017/portfolio
+      CLIENT_URL: http://localhost:5000
+      ADMIN_KEY: ${ADMIN_KEY:?Set ADMIN_KEY before running docker compose}
+    depends_on:
+      - mongo
+    restart: unless-stopped
+
+  mongo:
+    image: mongo:7
+    volumes:
+      - mongo-data:/data/db
+    restart: unless-stopped
+
+volumes:
+  mongo-data:
